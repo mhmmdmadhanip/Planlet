@@ -1,4 +1,4 @@
-function showingData(){
+function showingData(user){
     const endpoint = "http://localhost:8000/";
     const fetching = fetch(endpoint);
 
@@ -13,6 +13,7 @@ function showingData(){
         <h1>${data[count].user}</h1>
       </div>`
       document.querySelector(".plus-sign").style.order = "2"
+      document.querySelector(".calc").setAttribute("onclick", "addingIncomes(this)")
       count++
     }
 
@@ -44,7 +45,7 @@ function postData(){
 }
 
 
-function userBalance(element){
+function userBalance(user){
     const endpoint = "http://localhost:8000/";
     const fetching = fetch(endpoint);
 
@@ -58,9 +59,9 @@ function userBalance(element){
     fetching
     .then((response) => response.json())
     .then((data) => {
-        uang.innerHTML = `${data[element.id].balance}`;
+        uang.innerHTML = `${data[user.id].balance}`;
 
-        let listHistory = data[element.id].history.split(",")
+        let listHistory = data[user.id].history.split(",")
         
         history1.innerHTML = listHistory[0]
         history2.innerHTML = listHistory[1]
@@ -75,20 +76,70 @@ function showHide(){
     var wallet = document.querySelector(".wallet");
     var userWallet = document.querySelector(".user-wallet")
     var backButton = document.querySelector(".btn")
+    var calc = document.querySelector(".calc")
 
-     if (planPage.style.display = "none"){
+     if (planPage.style.display === "none"){
         planPage.style.display = "block";
         backButton.style.display = "block";
+        calc.style.display="flex"
         wallet.style.display = "none";
         userWallet.style.display = "none";
         
-    } else if(planPage.style.display = "block"){
+    } else{
         planPage.style.display = "none";
         backButton.style.display = "none"
+        calc.style.display="none"
         wallet.style.display = "flex";
         userWallet.style.display = "flex";
      }
     
+}
+
+function addingIncomes(user){
+    let income = parseInt(prompt("Insert amount"))
+    let uang = document.querySelector(".cash-balance")
+    let history1 = document.querySelector(".his1");
+    let history2 = document.querySelector(".his2");
+    let history3 = document.querySelector(".his3");
+    let history4 = document.querySelector(".his4");
+    let history5 = document.querySelector(".his5");
+
+    const endpoint = `http://localhost:8000/${user.id}`;
+    const fetching = fetch(endpoint,{
+        method : 'GET',
+        mode: 'cors',})
+
+    fetching
+    .then((response) => response.json())
+    .then((data) => {
+        const endpoint = `http://localhost:8000/${user.id}`;
+        const putFetching = fetch(endpoint,{
+            method : 'PUT',
+            mode: 'cors',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                "user" : data.user,
+                "balance" : parseInt(data.balance) + income,
+                "history" : data.history + `income : ${income}`
+            })
+    });
+
+        putFetching
+        .then((response) => response.json())
+        .then((data) => {
+        uang.innerHTML = `${data[user.id].balance}`;
+
+        let listHistory = data[user.id].history.split(",")
+        
+        history1.innerHTML = listHistory[0]
+        history2.innerHTML = listHistory[1]
+        history3.innerHTML = listHistory[2]
+        history4.innerHTML = listHistory[3]
+        history5.innerHTML = listHistory[4]
+    })})
+    userBalance()
 }
 
 showingData()
