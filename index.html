@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Planlet</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://kit.fontawesome.com/ef7d1b0045.js" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="Title">
+        <i class="fa-solid fa-coins fa-2x"></i>
+        <h1>Planlet</h1>
+      </div>
+      <div class="nav-bar">
+        <a class = bar href="#home">Home</a>
+        <a class = bar href="#planner">Planner</a>
+        <a class = bar href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <div id="home">
+      <div class="welcoming-text">
+      <h1 class="home-heading">Welcome to Planlet</h1>
+      <h2>Planlet is a website that will make you easier to record your expenses and incomes</h2>
+      </div>
+    </div>
+
+    <div id="planner">
+      <div class="user-wallet">
+        <h1>User's Wallet</h1>
+      </div>
+      <div class="wallet">
+        <div class="user plus-sign" onclick="postData()">
+          <i class="fa-solid fa-plus fa-5x" style="padding: 30%"></i>
+        </div>
+      </div>
+      <div class="plan-page">
+        <div class="cash-amount">
+          <h2>Cash balance</h2>
+          <h1 class="cash-balance">Cash</h1>
+        </div>
+        <hr class="hr-plan">
+        <div class="record">
+          <h2>Record</h2>
+          <div class="record-fill">
+            <h2 class="his1">Expenses/Incomes</h2>
+          </div>
+          <div class="record-fill">
+            <h2 class="his2">Expenses/Incomes</h2>
+          </div>
+          <div class="record-fill">
+            <h2 class="his3">Expenses/Incomes</h2>
+          </div>
+          <div class="record-fill">
+            <h2 class="his4">Expenses/Incomes</h2>
+          </div>
+          <div class="record-fill">
+            <h2 class="his5">Expenses/Incomes</h2>
+          </div>
+        </div>
+        <div class="btn" onclick="showHide();">
+        <h1 style="color: #fff;"">Back!</h1>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      <button class="contact">
+        <i class="fa-regular fa-address-book fa-3x img-contact"></i>
+        <span class="contact-heading">Contact</span>
+        <div class="contact-trans">
+          <a href="https://www.instagram.com/mhmmdmadhanip/"><i class="fa-brands fa-instagram contact-link fa-3x"></i></a>
+          <a href="https://twitter.com/madannss"><i class="fa-brands fa-twitter contact-link fa-3x"></i></a>
+          <a href="https://github.com/mhmmdmadhanip"><i class="fa-brands fa-github contact-link fa-3x"></i></a>
+        </div>
+      </button>
+    </div>
+    <script src="index.js" charset="utf-8"></script>
+  </body>
+</html>

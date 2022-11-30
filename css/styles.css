@@ -1,0 +1,243 @@
+body{
+    /* background-color: #e97777; */
+    margin: 0;
+    font-family: "Montserrat", sans-serif;
+    text-align: center;
+    color: #8ec3b0;
+}
+
+.nav{
+    background-color: #def5e5;
+    width: 90%;
+    height: 60px;
+    padding: 1% 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+a{
+    text-decoration: none;
+    color: #8ec3b0;
+}
+.Title{
+    line-height: 1.5;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    padding: 0 3%;
+}
+
+.bar{
+    font-size: 1.5rem;
+    padding:5%;
+    justify-self: center;
+    align-self: center;
+}
+
+.bar:hover{
+    color:#fff;
+}
+
+/* Home section */
+
+#home{
+    height:700px;
+}
+
+.home-heading{
+    font-size: 3rem;
+    font-family: "Ubuntu", sans-serif;
+    padding-top: 25%;
+    height: 60px;
+}
+
+.welcoming-text{
+    padding: 6% 25%;
+    width: 50%;
+}
+
+/* Planner section */
+#planner{
+    background-color: #bcead5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 850px;
+    padding: 2%;
+    margin:0;
+}
+
+.wallet{
+    display: flex;
+    flex-direction: row;
+}
+
+.user-wallet{
+    background-color: #fff;
+    width: 80%;
+    height:20%;
+    border-radius: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn{
+    width: 100px;
+    height: 100px;
+    border-radius: 20px;
+    background-color: #9ed5c5;
+    display: none;
+}
+
+.user{
+    width: 12rem;
+    height: 12rem;
+    background-color: #def5e5;
+    border-radius: 20px;
+    margin: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plan-page h1{
+    font-weight: 400;
+}
+
+.plan-page{
+    position: relative;
+    width: 40%;
+    height: 200px;
+    background-color: #fff;
+    padding-top: 20px;
+    border-radius: 20px;
+    transition: 0.5s;  
+    display: none;
+}
+
+.plan-page:hover{
+    height: 820px;
+}
+
+.cash-amount{
+    margin:3%;
+    background-color: #def5e5;
+    border-radius: 20px;
+    padding:1% 0;
+    position: relative;
+}
+
+.hr-plan{
+    border-style: dashed none none;
+    border-color: #bcead5;
+    border-width: 6px;
+    height: 2px;
+    width: 20%;
+}
+
+.record{
+    margin: 3% 3% 5%;
+    background-color: transparent;
+    border-radius: 20px;
+    height:580px;
+    color: transparent;
+    transition: 0.3s;
+}
+
+.record-fill{
+    background-color: transparent;
+    border-radius: 20px;
+    height:80px;
+    width: 90%;
+    position: relative;
+    margin: 4% 5% ;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.plan-page:hover .record{
+    background-color: #bcead5;
+    color: #8ec3b0;
+    padding-top: 2%;
+}
+
+.plan-page:hover .record-fill{
+    background-color: #fff;
+}
+
+/* Contact section */
+#contact{
+    background-color: #9ed5c5;
+    height: 150px;
+    margin: 0;
+    padding: 3% 0 0;
+    color: #fff;
+}
+
+.contact{
+    background-color: #8ec3b0;
+    width: 20%;
+    height: 100px;
+    margin: 0 10%;
+    border-radius: 40px;
+    border: 0;
+    overflow: hidden;
+    position: relative;
+    transition: .3s;
+    padding: 16px 40px;
+}
+
+.contact-heading{
+    font-size: 2rem;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    transition: 0.4s;
+    transform: translateY(13px);
+    margin: 0 3% 0;
+}
+
+.img-contact{
+    color: #fff;
+    display: inline-block;
+    transition: 0.4s;
+    transform: translateY(15px)
+}
+
+.contact-trans{
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+}
+.contact-link{
+    color: transparent;
+    display: inline-block;
+    transition: 0.5s;
+}
+
+.contact:hover{
+    border-radius: 0px;
+}
+
+.contact:hover .contact-heading,
+.contact:hover .img-contact{
+    transform: translateY(-80px);
+}
+
+.contact:hover .contact-link{
+    color: #fff;
+    transform: translateY(-25px);
+}
